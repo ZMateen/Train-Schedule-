@@ -1,0 +1,122 @@
+<!DOCTYPE hmtl>
+
+<html lang="eng">
+
+    <meta charset="UTF-8">
+
+    <head>
+
+        <title>Train Schedule</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Anytime Is Train Time!</h1>
+                <h2>Here we display trains and their times</h2>
+
+                <br>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Polar Express</td>
+                            <td>North Pole</td>
+                            <td>1 year</td>
+                            <td>Next Christmas</td>
+                            <td>281,433</td>
+                        </tr>
+                        <tr>
+                            <td>The Hogwarts Express</td>
+                            <td>Hogwarts School of Witchcraft and Wizardry</td>
+                            <td>3 Days</td>
+                            <td>1 Day</td>
+                            <td>24 * 60 * 60</td>
+                        </tr>
+                        <tr>
+                            <td>The New York Minute</td>
+                            <td>New York Central Station</td>
+                            <td>6 Hours</td>
+                            <td>20 Minutes</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Lovecraftian Caravan</td>
+                            <td>Innsmouth</td>
+                            <td>4 Day</td>
+                            <td>11 Hours</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="trainName">Train Name</label>
+                <input type="text" class="form-control" id="trainName">
+            </div>
+            <div class="form-group">
+                <label for="trainDestination">Train Destination</label>
+                <input type="text" class="form-control" id="trainDestination">
+            </div>
+            <div class="form-group">
+                <label for="trainTime">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="trainTime">
+            </div>
+            <div class="form-group">
+                <label for="trainFrequency">Frequency (min)</label>
+                <input type="text" class="form-control" id="trainFrequency">
+            </div>
+                
+        </form>
+
+        <button type="button" class="btn btn-primary">Submit</button>
+
+
+
+        <script type="text/javascript">
+        
+        //Adding trains
+        $("#btn btn-primary").on("click", function() {
+            var trainName = $("#trainName").val().trim();
+            var trainDestination = $("#trainDestination").val().trim();
+            var trainTime = $("#trainTime").val().trim();
+            var trainFrequency = $("#trainFrequency").val().trim();
+
+            //Train times
+            var moreTrains = {
+                tname: trainName,
+                tDestination: destination,
+                ttime: trainTime,
+                tfrequency: frequency,
+            }
+            
+            //Clearing text boxes
+            $("#trainName").val("");
+            $("#trainDestination").val("");
+            $("#trainTime").val("");
+            $("#trainFrequency").val("");
+        });
+        
+        
+        
+        </script> 
+    </body>
+</html> 
